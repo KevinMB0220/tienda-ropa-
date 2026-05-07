@@ -226,29 +226,40 @@ footer {
   margin-bottom: 3rem;
 }
 
-/* Mobile Adjustments - FIX FOR DESORDENADO */
+/* Mobile Adjustments - High-End Focus (iPhone 14 Pro Max) */
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    min-height: 85vh;
+    padding-top: 100px;
+    padding-bottom: 2rem;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
   }
   
   .hero-text-box {
     width: 100%;
     padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
   }
   
-  .hero h1 { font-size: 2.5rem; }
+  .hero h1 { 
+    font-size: 2.8rem; 
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
   
   .hero-image {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 350px;
     right: 0;
     margin-top: 2rem;
+    border: 5px solid white;
   }
   
   .nav-links { display: none; }
@@ -257,27 +268,51 @@ footer {
     padding: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    scroll-padding: 0 1.5rem; /* Helps with centering */
+    scrollbar-width: none;
   }
+
+  .carousel-track-container::-webkit-scrollbar { display: none; }
   
   .carousel-track {
     gap: 0;
+    padding: 0;
   }
   
   .product-card {
-    min-width: 100vw; /* EXACTLY ONE CARD PER SCREEN */
+    min-width: 100vw;
+    width: 100vw;
     scroll-snap-align: center;
-    padding: 2rem;
-    box-shadow: none;
+    padding: 0 1.5rem; /* Standard mobile gutter */
     background: transparent;
+    box-shadow: none;
+    border: none;
   }
   
   .product-image-box {
-    aspect-ratio: 4/5;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1.2;
+    height: auto;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
+
+  .product-info {
+    padding: 1rem 0;
+  }
+
+  .product-info h3 { font-size: 1.2rem; }
+  .product-price { font-size: 1.4rem; }
   
   .nav-btn { display: none; }
+
+  .products-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 430px) { /* Specific iPhone 14 Pro Max & Plus tweaks */
+  .hero h1 { font-size: 3rem; }
+  .product-image-box { aspect-ratio: 1/1.3; }
 }
 
 .animate-up {
