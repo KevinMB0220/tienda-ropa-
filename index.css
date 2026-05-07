@@ -11,6 +11,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   font-family: var(--font);
   background-image: url('/images/bamboo_bg.png');
@@ -19,7 +26,6 @@ body {
   background-position: center;
   color: var(--text);
   line-height: 1.4;
-  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -268,8 +274,9 @@ footer {
     padding: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 1.5rem; /* Helps with centering */
+    scroll-padding: 0;
     scrollbar-width: none;
+    width: 100%;
   }
 
   .carousel-track-container::-webkit-scrollbar { display: none; }
@@ -277,13 +284,14 @@ footer {
   .carousel-track {
     gap: 0;
     padding: 0;
+    display: flex;
   }
   
   .product-card {
-    min-width: 100vw;
-    width: 100vw;
+    min-width: 100%;
+    width: 100%;
     scroll-snap-align: center;
-    padding: 0 1.5rem; /* Standard mobile gutter */
+    padding: 0 1.5rem;
     background: transparent;
     box-shadow: none;
     border: none;
