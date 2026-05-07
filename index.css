@@ -472,6 +472,9 @@ footer {
   }
 
   .nav-btn {
-    display: none; /* En móvil muy pequeño usamos swipe nativo o botones más pequeños */
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    padding: 0;
   }
 }

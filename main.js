@@ -37,6 +37,30 @@ if (track && prevBtn && nextBtn) {
     track.style.transform = `translateX(-${currentScroll}px)`;
   });
 
+  // Touch Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchStartX - touchEndX > swipeThreshold) {
+      // Swiped Left -> Go Next
+      nextBtn.click();
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      // Swiped Right -> Go Prev
+      prevBtn.click();
+    }
+  }
+
   window.addEventListener('resize', () => {
     currentScroll = 0;
     track.style.transform = `translateX(0px)`;
