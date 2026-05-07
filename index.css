@@ -18,6 +18,10 @@
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
+  background-image: url('/images/bamboo_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
