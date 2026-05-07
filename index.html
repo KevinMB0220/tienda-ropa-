@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN DROP | Minimal Streetwear</title>
+    <meta name="description" content="La mejor tienda de ropa urbana con diseños minimalistas y exclusivos. Encuentra t-shirts, puffers, jeans y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">URBAN DROP</div>
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#shop">Ver Catálogo</a></li>
+            <li><a href="#new">Novedades</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" id="cart-btn">Carrito (0)</a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <span class="hero-tag animate-up" style="animation-delay: 0.2s;">COLECCIÓN 2026</span>
+                <h1 class="animate-up" style="animation-delay: 0.4s;">TODO EL STREETWEAR<br>EN UN SOLO LUGAR</h1>
+                <p class="animate-up" style="animation-delay: 0.6s; max-width: 500px; margin-bottom: 2.5rem; line-height: 1.6; color: var(--text-secondary);">
+                    Curamos las mejores prendas de las marcas más icónicas. Calidad premium, diseños exclusivos y envíos a todo el país.
+                </p>
+                <button class="cta-button animate-up" style="animation-delay: 0.8s;">Explorar Catálogo</button>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <!-- Carousel Section -->
+        <section id="shop" class="products-section">
+            <div class="section-header">
+                <div>
+                    <span class="product-category">Top Ventas</span>
+                    <h2>Catálogo Destacado</h2>
+                </div>
+                <p style="max-width: 300px; color: var(--text-secondary); font-size: 0.9rem;">
+                    Desliza para descubrir nuestra selección exclusiva de esta temporada.
+                </p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <img src="/images/tee.png" alt="Blue Pocket T-shirt">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">T-Shirts</span>
+                                <h3>Pocket Tee Blue</h3>
+                            </div>
+                            <span class="product-price">$45.00</span>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <img src="/images/puffer.png" alt="Black Puffer Jacket">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Jackets</span>
+                                <h3>Flame Puffer Black</h3>
+                            </div>
+                            <span class="product-price">$120.00</span>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <img src="/images/cargo.png" alt="Grey Cargo Pants">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Pants</span>
+                                <h3>Urban Cargo Grey</h3>
+                            </div>
+                            <span class="product-price">$85.00</span>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <img src="/images/denim.png" alt="Blue Denim Jeans">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Denim</span>
+                                <h3>Heritage Denim Blue</h3>
+                            </div>
+                            <span class="product-price">$95.00</span>
+                        </div>
+                    </article>
+
+                    <!-- Duplicate for infinite-like feel or just more items -->
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <img src="/images/hero.png" alt="Limited Edition Hoodie">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Exclusivo</span>
+                                <h3>Street Hoodie White</h3>
+                            </div>
+                            <span class="product-price">$110.00</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="carousel-nav">
+                    <div class="nav-btn" id="prevBtn">←</div>
+                    <div class="nav-btn" id="nextBtn">→</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">URBAN DROP</div>
+                <p class="footer-desc">
+                    Tu destino número uno para el mejor streetwear. Seleccionamos cuidadosamente cada prenda para ofrecerte solo lo más top del estilo urbano.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Compra</h4>
+                <ul>
+                    <li><a href="#">T-Shirts</a></li>
+                    <li><a href="#">Sudaderas</a></li>
+                    <li><a href="#">Pantalones</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Tallas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Síguenos</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 URBAN DROP. Todos los derechos reservados.</p>
+            <p>Diseño por Antigravity</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
