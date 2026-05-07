@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URBAN DROP | Minimal Streetwear</title>
-    <meta name="description" content="La mejor tienda de ropa urbana con diseños minimalistas y exclusivos. Encuentra t-shirts, puffers, jeans y más.">
+    <title>SECTION506 | Minimal Streetwear</title>
+    <meta name="description" content="Tu tienda exclusiva de streetwear urbano. Calidad premium en cada prenda.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;600;800;900&display=swap" rel="stylesheet">
@@ -12,16 +12,17 @@
 </head>
 <body>
     <nav>
-        <div class="logo">URBAN DROP</div>
+        <div class="logo">SECTION506</div>
         <ul class="nav-links">
             <li><a href="#home">Inicio</a></li>
-            <li><a href="#shop">Ver Catálogo</a></li>
-            <li><a href="#new">Novedades</a></li>
-            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#shop-pants">Pantalones</a></li>
+            <li><a href="#shop-tops">Tops</a></li>
+            <li><a href="#about">Nosotros</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="#" id="cart-btn">Carrito (0)</a>
+            <a href="#" style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem;">Carrito (0)</a>
             <div class="menu-toggle" id="menuToggle">
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
@@ -31,87 +32,157 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-content">
-                <span class="hero-tag animate-up" style="animation-delay: 0.2s;">COLECCIÓN 2026</span>
-                <h1 class="animate-up" style="animation-delay: 0.4s;">TODO EL STREETWEAR<br>EN UN SOLO LUGAR</h1>
-                <p class="animate-up" style="animation-delay: 0.6s; max-width: 500px; margin-bottom: 2.5rem; line-height: 1.6; color: var(--text-secondary);">
-                    Curamos las mejores prendas de las marcas más icónicas. Calidad premium, diseños exclusivos y envíos a todo el país.
+            <div class="hero-text-box animate-up">
+                <span class="hero-tag">COLECCIÓN 2026</span>
+                <h1>ESTILO URBANO<br>SECTION506</h1>
+                <p>
+                    Curamos las mejores prendas del mercado. Calidad premium y diseños exclusivos diseñados para destacar en la ciudad.
                 </p>
-                <button class="cta-button animate-up" style="animation-delay: 0.8s;">Explorar Catálogo</button>
+                <button class="cta-button">Ver Catálogo</button>
             </div>
-            <div class="hero-image"></div>
+            <div class="hero-image animate-up" style="animation-delay: 0.2s;"></div>
         </section>
 
-        <!-- Product Grid Section -->
-        <section id="shop" class="products-section">
+        <!-- Carousel 1: Pantalones -->
+        <section id="shop-pants" class="products-section">
             <div class="section-header">
-                <div>
-                    <span class="product-category">Top Ventas</span>
-                    <h2>Catálogo Destacado</h2>
-                </div>
+                <span class="product-category" style="display: block; margin-bottom: 0.5rem; background: white; width: fit-content; padding: 2px 8px;">Bottoms</span>
+                <h2>Pantalones & Jeans</h2>
             </div>
 
-            <div class="grid-container">
-                <div class="product-grid" id="productGrid">
-                    <!-- Product 1: Pant 1 -->
+            <div class="carousel-container">
+                <div class="carousel-track">
                     <article class="product-card">
                         <div class="product-image-box">
-                            <span class="promo-tag">PROMO<br>XTRA</span>
-                            <img src="/images/cargo.png" alt="Grey Cargo Pants">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/cargo.png" alt="Cargo Grey">
                         </div>
                         <div class="product-info">
                             <div>
                                 <span class="product-category">Pants</span>
                                 <h3>Urban Cargo Grey</h3>
                             </div>
-                            <span class="product-price">$85.00</span>
+                            <span class="product-price">$85</span>
                         </div>
                     </article>
 
-                    <!-- Product 2: Pant 2 -->
                     <article class="product-card">
                         <div class="product-image-box">
-                            <span class="promo-tag">PROMO<br>XTRA</span>
-                            <img src="/images/denim.png" alt="Blue Denim Jeans">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/denim.png" alt="Heritage Denim">
                         </div>
                         <div class="product-info">
                             <div>
                                 <span class="product-category">Denim</span>
                                 <h3>Heritage Denim Blue</h3>
                             </div>
-                            <span class="product-price">$95.00</span>
+                            <span class="product-price">$95</span>
                         </div>
                     </article>
 
-                    <!-- Product 3: Top 1 -->
                     <article class="product-card">
                         <div class="product-image-box">
-                            <span class="promo-tag">PROMO<br>XTRA</span>
-                            <img src="/images/tee.png" alt="Blue Pocket T-shirt">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/cargo.png" alt="Tactical Black">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Pants</span>
+                                <h3>Tactical Black</h3>
+                            </div>
+                            <span class="product-price">$90</span>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/denim.png" alt="Raw Denim">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Denim</span>
+                                <h3>Raw Denim Dark</h3>
+                            </div>
+                            <span class="product-price">$105</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-nav">
+                    <div class="nav-btn prev">←</div>
+                    <div class="nav-btn next">→</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel 2: Tops -->
+        <section id="shop-tops" class="products-section">
+            <div class="section-header">
+                <span class="product-category" style="display: block; margin-bottom: 0.5rem; background: white; width: fit-content; padding: 2px 8px;">Upper Wear</span>
+                <h2>Camisetas & Hoodies</h2>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/tee.png" alt="Pocket Tee">
                         </div>
                         <div class="product-info">
                             <div>
                                 <span class="product-category">T-Shirts</span>
                                 <h3>Pocket Tee Blue</h3>
                             </div>
-                            <span class="product-price">$45.00</span>
+                            <span class="product-price">$45</span>
                         </div>
                     </article>
 
-                    <!-- Product 4: Top 2 -->
                     <article class="product-card">
                         <div class="product-image-box">
-                            <span class="promo-tag">PROMO<br>XTRA</span>
-                            <img src="/images/puffer.png" alt="Black Puffer Jacket">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/puffer.png" alt="Flame Puffer">
                         </div>
                         <div class="product-info">
                             <div>
                                 <span class="product-category">Jackets</span>
                                 <h3>Flame Puffer Black</h3>
                             </div>
-                            <span class="product-price">$120.00</span>
+                            <span class="product-price">$120</span>
                         </div>
                     </article>
+
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/tee.png" alt="Essential White">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">T-Shirts</span>
+                                <h3>Essential Tee White</h3>
+                            </div>
+                            <span class="product-price">$40</span>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card">
+                        <div class="product-image-box">
+                            <span class="promo-tag">PROMO XTRA</span>
+                            <img src="/images/puffer.png" alt="Street Puffer">
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">Jackets</span>
+                                <h3>Street Puffer Grey</h3>
+                            </div>
+                            <span class="product-price">$110</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-nav">
+                    <div class="nav-btn prev">←</div>
+                    <div class="nav-btn next">→</div>
                 </div>
             </div>
         </section>
@@ -120,41 +191,37 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <div class="footer-logo">URBAN DROP</div>
+                <div class="footer-logo">SECTION506</div>
                 <p class="footer-desc">
-                    Tu destino número uno para el mejor streetwear. Seleccionamos cuidadosamente cada prenda para ofrecerte solo lo más top del estilo urbano.
+                    Streetwear curado para los que buscan calidad y diseño exclusivo.
                 </p>
             </div>
             <div class="footer-links">
-                <h4>Compra</h4>
+                <h4>Categorías</h4>
                 <ul>
                     <li><a href="#">T-Shirts</a></li>
-                    <li><a href="#">Sudaderas</a></li>
                     <li><a href="#">Pantalones</a></li>
-                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Chaquetas</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Soporte</h4>
+                <h4>Ayuda</h4>
                 <ul>
                     <li><a href="#">Envíos</a></li>
-                    <li><a href="#">Devoluciones</a></li>
-                    <li><a href="#">Tallas</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Síguenos</h4>
+                <h4>Social</h4>
                 <ul>
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">TikTok</a></li>
-                    <li><a href="#">Twitter</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 URBAN DROP. Todos los derechos reservados.</p>
-            <p>Diseño por Antigravity</p>
+            <p>&copy; 2026 SECTION506. Todos los derechos reservados.</p>
+            <p>Streetwear Marketplace</p>
         </div>
     </footer>
 
