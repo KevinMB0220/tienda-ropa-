@@ -46,9 +46,31 @@ const reveal = () => {
 
 window.addEventListener('scroll', reveal);
 
+// Mobile Menu
+const initMobileMenu = () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+  }
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initCarousels();
+  initMobileMenu();
   reveal();
 });
 

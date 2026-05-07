@@ -262,13 +262,53 @@ footer {
   .hero-image {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 300px;
     right: 0;
     margin-top: 2rem;
     border: 5px solid white;
   }
   
-  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1500;
+  }
+  
+  .nav-links.active { right: 0; }
+
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   
   .carousel-track-container {
     padding: 0;
