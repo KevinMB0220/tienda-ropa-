@@ -1,80 +1,66 @@
-// Carousel Logic for Multiple Instances
-const initializeCarousel = (container) => {
-  const track = container.querySelector('.carousel-track');
-  const prevBtn = container.querySelector('.prev');
-  const nextBtn = container.querySelector('.next');
+// Section 506: Core Logic
+const initCarousels = () => {
+  const containers = document.querySelectorAll('.carousel-container');
   
-  if (!track || !prevBtn || !nextBtn) return;
-
-  let currentScroll = 0;
-
-  const updateScroll = () => {
-    track.style.transform = `translateX(-${currentScroll}px)`;
-  };
-
-  nextBtn.addEventListener('click', () => {
-    const cardWidth = track.querySelector('.product-card').offsetWidth + 16; // width + gap
-    const maxScroll = track.scrollWidth - container.clientWidth + 32;
+  containers.forEach(container => {
+    const track = container.querySelector('.carousel-track');
+    const trackContainer = container.querySelector('.carousel-track-container');
+    const prevBtn = container.querySelector('.prev');
+    const nextBtn = container.querySelector('.next');
     
-    if (currentScroll < maxScroll - 10) {
-      currentScroll += cardWidth;
-      if (currentScroll > maxScroll) currentScroll = maxScroll;
-    } else {
-      currentScroll = 0;
-    }
-    updateScroll();
+    if (!track || !trackContainer) return;
+
+    const getScrollAmount = () => {
+      const card = track.querySelector('.product-card');
+      return card ? card.offsetWidth + 32 : 300; // width + gap
+    };
+
+    nextBtn?.addEventListener('click', () => {
+      trackContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      trackContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    // Hide/Show buttons based on scroll position (optional but adds polish)
+    const toggleButtons = () => {
+      if (prevBtn) prevBtn.style.opacity = trackContainer.scrollLeft > 10 ? '1' : '0.3';
+      if (nextBtn) {
+        const isEnd = trackContainer.scrollLeft + trackContainer.clientWidth >= track.scrollWidth - 10;
+        nextBtn.style.opacity = isEnd ? '0.3' : '1';
+      }
+    };
+
+    trackContainer.addEventListener('scroll', toggleButtons);
+    window.addEventListener('resize', toggleButtons);
+    toggleButtons();
   });
-
-  prevBtn.addEventListener('click', () => {
-    const cardWidth = track.querySelector('.product-card').offsetWidth + 16;
-    const maxScroll = track.scrollWidth - container.clientWidth + 32;
-    
-    if (currentScroll > 10) {
-      currentScroll -= cardWidth;
-      if (currentScroll < 0) currentScroll = 0;
-    } else {
-      currentScroll = maxScroll;
-    }
-    updateScroll();
-  });
-
-  // Touch Support
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  track.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  track.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    const swipeThreshold = 50;
-    if (touchStartX - touchEndX > swipeThreshold) nextBtn.click();
-    if (touchEndX - touchStartX > swipeThreshold) prevBtn.click();
-  }, { passive: true });
 };
 
-// Initialize all carousels on the page
-document.querySelectorAll('.carousel-container').forEach(initializeCarousel);
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousels();
+  
+  // Simple Reveal Animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-up');
+      }
+    });
+  }, { threshold: 0.1 });
 
-// Mobile Menu
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.querySelector('.nav-links');
+  document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+});
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-  });
-}
-
-// Parallax for Hero
+// Parallax Hero
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
-  const heroImage = document.querySelector('.hero-image');
-  if (heroImage) {
-    heroImage.style.transform = `translateY(${scrolled * 0.15}px)`;
+  const heroImg = document.querySelector('.hero-image');
+  if (heroImg) {
+    heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
   }
 });
 
-console.log('SECTION506: System Ready');
+console.log('SECTION506: Fluid UI Loaded');
