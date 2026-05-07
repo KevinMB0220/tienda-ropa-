@@ -1,4 +1,5 @@
-// Section 506: Core Logic
+// Section 506: Multi-Instance & Responsive Carousel
+
 const initCarousels = () => {
   const containers = document.querySelectorAll('.carousel-container');
   
@@ -8,59 +9,47 @@ const initCarousels = () => {
     const prevBtn = container.querySelector('.prev');
     const nextBtn = container.querySelector('.next');
     
-    if (!track || !trackContainer) return;
+    if (!track || !prevBtn || !nextBtn) return;
 
-    const getScrollAmount = () => {
-      const card = track.querySelector('.product-card');
-      return card ? card.offsetWidth + 32 : 300; // width + gap
-    };
-
-    nextBtn?.addEventListener('click', () => {
-      trackContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-
-    prevBtn?.addEventListener('click', () => {
-      trackContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
-
-    // Hide/Show buttons based on scroll position (optional but adds polish)
-    const toggleButtons = () => {
-      if (prevBtn) prevBtn.style.opacity = trackContainer.scrollLeft > 10 ? '1' : '0.3';
-      if (nextBtn) {
-        const isEnd = trackContainer.scrollLeft + trackContainer.clientWidth >= track.scrollWidth - 10;
-        nextBtn.style.opacity = isEnd ? '0.3' : '1';
+    // Desktop logic only (buttons)
+    nextBtn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        trackContainer.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+      } else {
+        const cardWidth = track.querySelector('.product-card').offsetWidth + 32;
+        trackContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
       }
-    };
+    });
 
-    trackContainer.addEventListener('scroll', toggleButtons);
-    window.addEventListener('resize', toggleButtons);
-    toggleButtons();
+    prevBtn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        trackContainer.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+      } else {
+        const cardWidth = track.querySelector('.product-card').offsetWidth + 32;
+        trackContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      }
+    });
   });
 };
+
+// Scroll Reveal
+const reveal = () => {
+  const reveals = document.querySelectorAll('.animate-up');
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal);
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initCarousels();
-  
-  // Simple Reveal Animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-up');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+  reveal();
 });
 
-// Parallax Hero
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const heroImg = document.querySelector('.hero-image');
-  if (heroImg) {
-    heroImg.style.transform = `translateY(${scrolled * 0.1}px)`;
-  }
-});
-
-console.log('SECTION506: Fluid UI Loaded');
+console.log('SECTION506: Mobile-First System Ready');
