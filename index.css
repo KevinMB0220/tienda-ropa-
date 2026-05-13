@@ -275,7 +275,7 @@ nav {
 }
 
 .product-card {
-  min-width: calc(25% - 1.5rem); /* Show 4 items on desktop */
+  min-width: calc(20% - 1.6rem); /* Show 5 items on desktop for higher density */
   background: white;
   padding: 0;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -527,8 +527,8 @@ footer {
   }
   
   .product-card {
-    min-width: 80%; /* Show part of the next item */
-    width: 80%;
+    min-width: 70%; /* Reveal more of the next items (peek effect) */
+    width: 70%;
     scroll-snap-align: center;
     padding: 0;
     margin: 0 0.5rem;
